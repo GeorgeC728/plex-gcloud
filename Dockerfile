@@ -13,3 +13,11 @@ RUN set -e; \
     apt-get update; \
     apt-get install -y gcsfuse \
     && apt-get clean
+
+# Copy script across
+
+COPY fuse_storage.sh /fuse_storage.sh
+
+RUN chmod +x /fuse_storage.sh
+
+CMD ["/fuse_storage.sh"]
