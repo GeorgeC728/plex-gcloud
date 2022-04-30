@@ -1,8 +1,19 @@
 #!/usr/bin/env bash
-# Make directories
-mkdir -p /mnt/config
-mkdir -p /mnt/media
 
+echo "--------- Mounting buckets ---------"
+# Make directories
+mkdir -p /config
+#mkdir -p /tv
+#mkdir -p /movies
+
+
+# Change permissions
+
+chown abc:abc /config
 # Mount each bucket
-gcsfuse --debug_gcs --debug_fuse $BUCKET_CONFIG /mnt/config
-gcsfuse --debug_gcs --debug_fuse $BUCKET_MEDIA /mnt/media
+su abc -s "/usr/bin/gcsfuse --debug_gcs --debug_fuse $BUCKET_CONFIG /config"
+#gcsfuse --debug_gcs --debug_fuse $BUCKET_MEDIA /mnt/movies
+
+su abc -s "echo hello > /config/test.txt"
+
+sleep infinity
