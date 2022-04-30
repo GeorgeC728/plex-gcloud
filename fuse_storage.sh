@@ -11,9 +11,9 @@ mkdir -p /movies
 
 chown abc:abc /config
 # Mount each bucket
-gcsfuse --foreground --debug_gcs --debug_fuse -uid 911 -gid 911 -o allow_other $BUCKET_CONFIG /config
-gcsfuse --foreground --debug_gcs --debug_fuse -uid 911 -gid 911 -o allow_other --only-dir tv/ $BUCKET_MEDIA /tv
-gcsfuse --foreground --debug_gcs --debug_fuse -uid 911 -gid 911 -o allow_other --only-dir movies/ $BUCKET_MEDIA /movies
+gcsfuse --debug_gcs --debug_fuse -uid 911 -gid 911 -o allow_other $BUCKET_CONFIG /config
+gcsfuse --debug_gcs --debug_fuse -uid 911 -gid 911 -o allow_other --only-dir tv/ $BUCKET_MEDIA /tv
+gcsfuse --debug_gcs --debug_fuse -uid 911 -gid 911 -o allow_other --only-dir movies/ $BUCKET_MEDIA /movies
 
 
 su abc -s "echo hello > /config/test.txt"
