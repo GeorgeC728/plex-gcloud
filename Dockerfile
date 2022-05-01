@@ -1,4 +1,4 @@
-FROM linuxserver/plex
+FROM linuxserver/plex:bionic
 
 # Install gcsfuse
 RUN set -e; \
