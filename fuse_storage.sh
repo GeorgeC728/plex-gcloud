@@ -15,7 +15,5 @@ gcsfuse --debug_gcs --debug_fuse -uid 911 -gid 911 -o allow_other $BUCKET_CONFIG
 gcsfuse --debug_gcs --debug_fuse -uid 911 -gid 911 -o allow_other --only-dir tv/ $BUCKET_MEDIA /tv
 gcsfuse --debug_gcs --debug_fuse -uid 911 -gid 911 -o allow_other --only-dir movies/ $BUCKET_MEDIA /movies
 
-
-su abc -s "echo hello > /config/test.txt"
-
+# Keep the script alive so container doesn't shutdown
 sleep infinity
